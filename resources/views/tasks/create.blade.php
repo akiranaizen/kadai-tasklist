@@ -12,7 +12,7 @@
                     {!! Form::label('content','タスク:') !!}
                     {!! Form::text('content',null,['class' => 'form-control']) !!}
                     
-                    {!! Form::submit('投稿') !!}
+                    {!! Form::submit('投稿',['class' => 'btn btn-primary']) !!}
                 </div>
             
             {!! Form::close() !!}
