@@ -6,7 +6,7 @@ class TasksTableSeeder extends Seeder
 {
     public function run()
     {
-        for($i = 1; $i <= 100; $i++) {
+        for($i = 1; $i <= 10; $i++) {
             DB::table('tasks')->insert([
                 'status' => 'test title ' . $i,
                 'content' => 'test content ' . $i
