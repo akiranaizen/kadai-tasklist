@@ -11,6 +11,7 @@
                     <th>id</th>
                     <th>ステータス</th>
                     <th>タスク</th>
+                    <th>期日</th>
                 </tr>
             </thead>
             
@@ -20,6 +21,7 @@
                     <td>{!! link_to_route('tasks.show',$task->id,['task' => $task->id]) !!}</td>      <!-- 上のforeachで1行レコード $task == レコード idカラムの内容表示 -->
                     <td>{{ $task->status }}</td>
                     <td>{{ $task->content }}</td>
+                    <td>{{ $task->deadline }}</td>
                 </tr>
                 @endforeach
             </tbody>

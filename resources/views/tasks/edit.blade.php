@@ -18,6 +18,11 @@
                     {!! Form::text('content',null,['class' => 'form-control']) !!}
                 </div>
                 
+                <div classs="form-group">
+                    {!! Form::label('deadline','期日:') !!}
+                    {!! Form::text('deadline',null,['class' => 'form-control']) !!}
+                </div>
+                
                 {!! Form::submit('更新',['class' => 'btn btn-primary']) !!}
                 
             {!! Form::close() !!}

@@ -45,12 +45,14 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'deadline' => 'required|max:10',
             'status' => 'required|max:10',
             'content' => 'required|max:255',
             ]);
         
         // 認証済みユーザ（閲覧者）の投稿として作成（リクエストされた値をもとに作成）
         $request->user()->tasks()->create([
+            'deadline' => $request->deadline,
             'status' => $request->status,
             'content' => $request->content,
         ]);
@@ -84,13 +86,15 @@ class TasksController extends Controller
     {
         
         $request->validate([
+            'deadline' => 'required|max:10',
             'status' => 'required|max:10',
             'content' => 'required|max:255',
             ]);
             
         $task = Task::findOrFail($id);
             
-        if (\Auth::id() === $task->user_id) {   
+        if (\Auth::id() === $task->user_id) {
+            $task->deadline = $request->deadline;
             $task->status = $request->status;
             $task->content = $request->content;
             $task->save();

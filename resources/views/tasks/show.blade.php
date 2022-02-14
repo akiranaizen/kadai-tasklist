@@ -5,6 +5,7 @@
     <h1>id = {{ $task->id }}のタスク詳細ページ</h1>
     
     <table class="table table-bordered">
+        
         <tr>
             <th>id</th>
             <td>{{ $task->id }}</td>
@@ -18,6 +19,11 @@
         <tr>
             <th>タスク</th>
             <td>{{ $task->content }}</td>
+        </tr>
+        
+        <tr>
+            <th>期日</th>
+            <td>{{ $task->deadline }}</td>
         </tr>
         
     </table>
